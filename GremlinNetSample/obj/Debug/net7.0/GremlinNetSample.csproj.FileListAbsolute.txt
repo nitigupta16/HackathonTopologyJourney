@@ -1,0 +1,17 @@
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\bin\Debug\net7.0\GremlinNetSample.exe
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\bin\Debug\net7.0\GremlinNetSample.deps.json
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\bin\Debug\net7.0\GremlinNetSample.runtimeconfig.json
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\bin\Debug\net7.0\GremlinNetSample.dll
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\bin\Debug\net7.0\GremlinNetSample.pdb
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\bin\Debug\net7.0\Gremlin.Net.dll
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\bin\Debug\net7.0\Polly.dll
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\GremlinNetSample.csproj.AssemblyReference.cache
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\GremlinNetSample.GeneratedMSBuildEditorConfig.editorconfig
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\GremlinNetSample.csproj.CoreCompileInputs.cache
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\GremlinNetSample.csproj.CopyComplete
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\GremlinNetSample.dll
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\refint\GremlinNetSample.dll
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\GremlinNetSample.pdb
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\GremlinNetSample.genruntimeconfig.cache
+C:\git-samples\azure-cosmos-db-graph-gremlindotnet-getting-started\GremlinNetSample\obj\Debug\net7.0\ref\GremlinNetSample.dll

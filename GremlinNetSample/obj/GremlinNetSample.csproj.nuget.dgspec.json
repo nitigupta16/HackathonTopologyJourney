@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\git-samples\\azure-cosmos-db-graph-gremlindotnet-getting-started\\GremlinNetSample\\GremlinNetSample.csproj": {}
+  },
+  "projects": {
+    "C:\\git-samples\\azure-cosmos-db-graph-gremlindotnet-getting-started\\GremlinNetSample\\GremlinNetSample.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git-samples\\azure-cosmos-db-graph-gremlindotnet-getting-started\\GremlinNetSample\\GremlinNetSample.csproj",
+        "projectName": "GremlinNetSample",
+        "projectPath": "C:\\git-samples\\azure-cosmos-db-graph-gremlindotnet-getting-started\\GremlinNetSample\\GremlinNetSample.csproj",
+        "packagesPath": "C:\\Users\\nitigupta\\.nuget\\packages\\",
+        "outputPath": "C:\\git-samples\\azure-cosmos-db-graph-gremlindotnet-getting-started\\GremlinNetSample\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nitigupta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Gremlin.Net": {
+              "target": "Package",
+              "version": "[3.4.13, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
