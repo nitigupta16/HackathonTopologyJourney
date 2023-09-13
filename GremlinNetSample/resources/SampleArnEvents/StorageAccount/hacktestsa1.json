@@ -1,0 +1,104 @@
+[
+    {
+        "id": "9b08593c-79d2-4f43-a8ff-ce359f2301b4",
+        "subject": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Storage/storageAccounts/hacktestsa1",
+        "data": {
+            "resourceLocation": "eastus2",
+            "publisherInfo": "Microsoft.Resources",
+            "resources": [
+                {
+                    "correlationId": "fd3946e1-e59d-4322-8b85-f652477299e0",
+                    "resourceId": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Storage/storageAccounts/hacktestsa1",
+                    "apiVersion": "2022-05-01",
+                    "statusCode": "OK",
+                    "armResource": {
+                        "sku": {
+                            "name": "Standard_RAGRS",
+                            "tier": "Standard"
+                        },
+                        "kind": "StorageV2",
+                        "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Storage/storageAccounts/hacktestsa1",
+                        "name": "hacktestsa1",
+                        "type": "Microsoft.Storage/storageAccounts",
+                        "location": "eastus2",
+                        "tags": {},
+                        "properties": {
+                            "dnsEndpointType": "Standard",
+                            "defaultToOAuthAuthentication": false,
+                            "publicNetworkAccess": "Enabled",
+                            "keyCreationTime": {
+                                "key1": "2023-09-12T14:44:43.9067388Z",
+                                "key2": "2023-09-12T14:44:43.9067388Z"
+                            },
+                            "allowCrossTenantReplication": false,
+                            "privateEndpointConnections": [],
+                            "minimumTlsVersion": "TLS1_2",
+                            "allowBlobPublicAccess": false,
+                            "allowSharedKeyAccess": true,
+                            "networkAcls": {
+                                "bypass": "AzureServices",
+                                "virtualNetworkRules": [],
+                                "ipRules": [],
+                                "defaultAction": "Allow"
+                            },
+                            "supportsHttpsTrafficOnly": true,
+                            "encryption": {
+                                "requireInfrastructureEncryption": false,
+                                "services": {
+                                    "file": {
+                                        "keyType": "Account",
+                                        "enabled": true,
+                                        "lastEnabledTime": "2023-09-12T14:44:44.0942457Z"
+                                    },
+                                    "blob": {
+                                        "keyType": "Account",
+                                        "enabled": true,
+                                        "lastEnabledTime": "2023-09-12T14:44:44.0942457Z"
+                                    }
+                                },
+                                "keySource": "Microsoft.Storage"
+                            },
+                            "accessTier": "Hot",
+                            "provisioningState": "Succeeded",
+                            "creationTime": "2023-09-12T14:44:43.7504933Z",
+                            "primaryEndpoints": {
+                                "dfs": "https://hacktestsa1.dfs.core.windows.net/",
+                                "web": "https://hacktestsa1.z20.web.core.windows.net/",
+                                "blob": "https://hacktestsa1.blob.core.windows.net/",
+                                "queue": "https://hacktestsa1.queue.core.windows.net/",
+                                "table": "https://hacktestsa1.table.core.windows.net/",
+                                "file": "https://hacktestsa1.file.core.windows.net/"
+                            },
+                            "primaryLocation": "eastus2",
+                            "statusOfPrimary": "available",
+                            "secondaryLocation": "centralus",
+                            "statusOfSecondary": "available",
+                            "secondaryEndpoints": {
+                                "dfs": "https://hacktestsa1-secondary.dfs.core.windows.net/",
+                                "web": "https://hacktestsa1-secondary.z20.web.core.windows.net/",
+                                "blob": "https://hacktestsa1-secondary.blob.core.windows.net/",
+                                "queue": "https://hacktestsa1-secondary.queue.core.windows.net/",
+                                "table": "https://hacktestsa1-secondary.table.core.windows.net/"
+                            }
+                        }
+                    },
+                    "additionalResourceProperties": {
+                        "armLinkedNotificationSource": "ResourceConsistencyJob",
+                        "sourceOperation": "Create",
+                        "provisioningState": "Succeeded"
+                    }
+                }
+            ],
+            "frontdoorLocation": "eastus2",
+            "resourcesContainer": "Inline",
+            "homeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "resourceHomeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "routingType": "Default"
+        },
+        "eventType": "Microsoft.Storage/storageAccounts/write",
+        "dataVersion": "3.0",
+        "metadataVersion": "1",
+        "eventTime": "2023-09-13T10:34:00.0052095Z",
+        "topic": "/subscriptions/1b433ca3-b636-417e-adac-a471c030b39f/resourceGroups/GovernanceNotificationsWusStorage/providers/Microsoft.EventGrid/domains/gov-ntdisp-wus-egdomain2arm/topics/microsoftnetwork-arn-8bfb556e-4fb5-3853-c103-0a2c2870b451"
+    }
+]

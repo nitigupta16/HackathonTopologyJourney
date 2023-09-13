@@ -1,0 +1,89 @@
+[
+    {
+        "id": "9b08593c-79d2-4f43-a8ff-ce359f2301b4",
+        "subject": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkInterfaces/hack-test-vm-1395_z1",
+        "data": {
+            "resourceLocation": "eastus2",
+            "publisherInfo": "Microsoft.Resources",
+            "resources": [
+                {
+                    "correlationId": "fd3946e1-e59d-4322-8b85-f652477299e0",
+                    "resourceId": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkInterfaces/hack-test-vm-1395_z1",
+                    "apiVersion": "2021-08-01",
+                    "statusCode": "OK",
+                    "armResource": {
+                        "name": "hack-test-vm-1395_z1",
+                        "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkInterfaces/hack-test-vm-1395_z1",
+                        "etag": "W/\"ce1fcc07-2b91-4917-940f-6e919532f59d\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "resourceGuid": "cd58d10e-4eb6-417b-8251-3b860eb10709",
+                            "ipConfigurations": [
+                                {
+                                    "name": "ipconfig1",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkInterfaces/hack-test-vm-1395_z1/ipConfigurations/ipconfig1",
+                                    "etag": "W/\"ce1fcc07-2b91-4917-940f-6e919532f59d\"",
+                                    "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "privateIPAddress": "10.242.121.4",
+                                        "privateIPAllocationMethod": "Dynamic",
+                                        "publicIPAddress": {
+                                            "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/publicIPAddresses/hack-test-vm-1-ip",
+                                            "properties": {
+                                                "deleteOption": "Detach"
+                                            }
+                                        },
+                                        "subnet": {
+                                            "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/virtualNetworks/hack-test-vnet-1/subnets/default"
+                                        },
+                                        "primary": true,
+                                        "privateIPAddressVersion": "IPv4"
+                                    }
+                                }
+                            ],
+                            "dnsSettings": {
+                                "dnsServers": [],
+                                "appliedDnsServers": [],
+                                "internalDomainNameSuffix": "gkufoj4lo2vuflwiowo52icnzf.cx.internal.cloudapp.net"
+                            },
+                            "macAddress": "60-45-BD-7B-F0-0B",
+                            "enableAcceleratedNetworking": true,
+                            "vnetEncryptionSupported": false,
+                            "enableIPForwarding": false,
+                            "networkSecurityGroup": {
+                                "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-vm-1-nsg"
+                            },
+                            "primary": true,
+                            "virtualMachine": {
+                                "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Compute/virtualMachines/hack-test-vm-1"
+                            },
+                            "hostedWorkloads": [],
+                            "tapConfigurations": [],
+                            "nicType": "Standard",
+                            "auxiliaryMode": "None"
+                        },
+                        "type": "Microsoft.Network/networkInterfaces",
+                        "location": "eastus2",
+                        "kind": "Regular"
+                    },
+                    "additionalResourceProperties": {
+                        "armLinkedNotificationSource": "ResourceConsistencyJob",
+                        "sourceOperation": "Create",
+                        "provisioningState": "Succeeded"
+                    }
+                }
+            ],
+            "frontdoorLocation": "eastus2",
+            "resourcesContainer": "Inline",
+            "homeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "resourceHomeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "routingType": "Default"
+        },
+        "eventType": "Microsoft.Network/networkInterfaces/write",
+        "dataVersion": "3.0",
+        "metadataVersion": "1",
+        "eventTime": "2023-09-13T10:34:00.0052095Z",
+        "topic": "/subscriptions/1b433ca3-b636-417e-adac-a471c030b39f/resourceGroups/GovernanceNotificationsWusStorage/providers/Microsoft.EventGrid/domains/gov-ntdisp-wus-egdomain2arm/topics/microsoftnetwork-arn-8bfb556e-4fb5-3853-c103-0a2c2870b451"
+    }
+]

@@ -1,0 +1,80 @@
+[
+    {
+        "id": "9b08593c-79d2-4f43-a8ff-ce359f2301b4",
+        "subject": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/virtualNetworks/hack-test-vnet-1",
+        "data": {
+            "resourceLocation": "eastus2",
+            "publisherInfo": "Microsoft.Resources",
+            "resources": [
+                {
+                    "correlationId": "fd3946e1-e59d-4322-8b85-f652477299e0",
+                    "resourceId": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/virtualNetworks/hack-test-vnet-1",
+                    "apiVersion": "2015-06-15",
+                    "statusCode": "OK",
+                    "armResource": {
+                        "name": "hack-test-vnet-1",
+                        "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/virtualNetworks/hack-test-vnet-1",
+                        "etag": "W/\"31acac75-9c61-4ca0-b7e2-e8837e57a73d\"",
+                        "type": "Microsoft.Network/virtualNetworks",
+                        "location": "eastus2",
+                        "tags": {},
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "resourceGuid": "2757a832-77cb-422b-aec8-759dfe204dcd",
+                            "addressSpace": {
+                                "addressPrefixes": [
+                                    "10.242.121.0/24"
+                                ]
+                            },
+                            "subnets": [
+                                {
+                                    "name": "default",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/virtualNetworks/hack-test-vnet-1/subnets/default",
+                                    "etag": "W/\"31acac75-9c61-4ca0-b7e2-e8837e57a73d\"",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "addressPrefix": "10.242.121.0/25",
+                                        "networkSecurityGroup": {
+                                            "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-3"
+                                        },
+                                        "ipConfigurations": [
+                                            {
+                                                "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/HACK-TEST-RG/providers/Microsoft.Network/networkInterfaces/HACK-TEST-VM-1395_Z1/ipConfigurations/IPCONFIG1"
+                                            }
+                                        ]
+                                    },
+                                    "type": "Microsoft.Network/virtualNetworks/subnets"
+                                }
+                            ],
+                            "flowLogs": [
+                                {
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/srisa-test-rg/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus2_trial/flowLogs/hack-test-vnet-1-hack-test-rg-flowlog"
+                                }
+                            ],
+                            "flowLogConfiguration": {
+                                "flowLogGuid": "f60fc87c-a2f1-42b9-bf3c-b8f53e136042",
+                                "enabledFlowLogCategories": 3874,
+                                "forceFlowLogConfig": false
+                            }
+                        }
+                    },
+                    "additionalResourceProperties": {
+                        "armLinkedNotificationSource": "ResourceConsistencyJob",
+                        "sourceOperation": "Create",
+                        "provisioningState": "Succeeded"
+                    }
+                }
+            ],
+            "frontdoorLocation": "eastus2",
+            "resourcesContainer": "Inline",
+            "homeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "resourceHomeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "routingType": "Default"
+        },
+        "eventType": "Microsoft.Network/virtualNetworks/write",
+        "dataVersion": "3.0",
+        "metadataVersion": "1",
+        "eventTime": "2023-09-13T10:34:00.0052095Z",
+        "topic": "/subscriptions/1b433ca3-b636-417e-adac-a471c030b39f/resourceGroups/GovernanceNotificationsWusStorage/providers/Microsoft.EventGrid/domains/gov-ntdisp-wus-egdomain2arm/topics/microsoftnetwork-arn-8bfb556e-4fb5-3853-c103-0a2c2870b451"
+    }
+]
