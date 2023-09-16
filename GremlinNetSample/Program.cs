@@ -224,6 +224,11 @@ namespace GremlinNetSample
                 connectionPoolSettings,
                 webSocketConfiguration))
             {
+                // Have commented the logic for adding data into graph and invoked ARNEventProcessor instead.
+                // Need to make this less terrible later - Shubhankar
+                GremlinArnIngestion.ARNEventProcessor.ProcessArnEvent(gremlinClient, "C:/Repos/HackathonTopologyJourney/GremlinNetSample/resources/SampleArnEvents/VirtualNetwork/hack-test-vnet-1.json");
+
+                /*
                 // </defineClientandServerObjects>
 
                 // <executeQueries>
@@ -254,6 +259,7 @@ namespace GremlinNetSample
                     Console.WriteLine();
                 }
                 // </executeQueries>
+                */
             }
 
             // Exit program
@@ -309,6 +315,36 @@ namespace GremlinNetSample
             }
 
             return null;
+        }
+
+        public static ResultSet<dynamic> RunGremlinQuery(GremlinClient gremlinClient, KeyValuePair<string, string> query)
+        {
+            Console.WriteLine(String.Format("Running this query: {0}: {1}", query.Key, query.Value));
+
+            // Create async task to execute the Gremlin query.
+            var resultSet = GremlinNetSample.Program.SubmitRequest(gremlinClient, query).Result;
+            Console.WriteLine($"Result set count: {resultSet.Count}");
+            if (resultSet.Count > 0)
+            {
+                Console.WriteLine("\tResult:");
+                foreach (var result in resultSet)
+                {
+                    // The vertex results are formed as Dictionaries with a nested dictionary for their properties
+                    string output = JsonConvert.SerializeObject(result);
+                    Console.WriteLine($"\t{output}");
+                }
+                Console.WriteLine();
+            }
+
+            // Print the status attributes for the result set.
+            // This includes the following:
+            //  x-ms-status-code            : This is the sub-status code which is specific to Cosmos DB.
+            //  x-ms-total-request-charge   : The total request units charged for processing a request.
+            //  x-ms-total-server-time-ms   : The total time executing processing the request on the server.
+            PrintStatusAttributes(resultSet.StatusAttributes);
+            Console.WriteLine();
+
+            return resultSet;
         }
     }
 }
