@@ -1,0 +1,60 @@
+{
+    "id": "<>",
+    "timestamp": "",
+    "type": "",
+    "operation" : "Add/Update/Delete",
+    "properties": [
+        {
+            "name": "",
+            "operation" : "Add/Update/Delete",
+            "values": {
+                "oldValue": "",
+                "newValue": ""
+            }
+        },
+        {
+            "name": "",
+            "operation" : "Add/Update/Delete",
+            "values": {
+                "oldValue": "",
+                "newValue": ""
+            }
+        }
+    ],
+    "edges": [
+        {
+            "label": "<label name>",
+            "resources": [
+                {
+                    "id": "<ARM resource ID",
+                    "direction": "from/to",
+                    "operation": "Add/Update/Delete",
+                    "newValue": "<newValue ARM resource ID - In case of addition, it will be same as id, in update, it will be newValue value, in delete, it will be null>"
+                },
+                {
+                    "id": "<ARM resource ID",
+                    "direction": "from/to",
+                    "operation": "Add/Update/Delete",
+                    "newValue": "<newValue ARM resource ID - In case of addition, it will be same as id, in update, it will be newValue value, in delete, it will be null>"
+                }
+            ]
+        },
+        {
+            "label": "<label name>",
+            "resources": [
+                {
+                    "id": "<ARM resource ID",
+                    "direction": "from/to",
+                    "operation": "Add/Update/Delete",
+                    "newValue": "<newValue ARM resource ID - In case of addition, it will be same as id, in update, it will be newValue value, in delete, it will be null>"
+                },
+                {
+                    "id": "<ARM resource ID",
+                    "direction": "from/to",
+                    "operation": "Add/Update/Delete",
+                    "newValue": "<newValue ARM resource ID - In case of addition, it will be same as id, in update, it will be newValue value, in delete, it will be null>"
+                }
+            ]
+        }
+    ]
+}
