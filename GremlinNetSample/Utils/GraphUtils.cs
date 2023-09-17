@@ -103,6 +103,10 @@ namespace GremlinArnIngestion
             {
                 return ResourceType.StorageAccount.ToString();
             }
+            else if (resourceType.EndsWith("networkSecurityGroups"))
+            {
+                return ResourceType.NetworkSecurityGroup.ToString();
+            }
             // TODO: Add for all resource types
             return "Unknown";
         }

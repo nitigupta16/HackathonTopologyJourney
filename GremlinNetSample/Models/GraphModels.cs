@@ -84,6 +84,7 @@ namespace GremlinArnIngestion
     {
         subnet, flows, // VirtualNetwork
         nsg, // Subnet
-        flowlog,
+        nic, compute, // VM
+        rule, security, // NSG
     }
 }
