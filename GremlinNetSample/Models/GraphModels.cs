@@ -72,20 +72,6 @@ namespace GremlinArnIngestion
         }
     }
 
-    public class VirtualNetwork: ResourceVertex
-    {
-        [JsonProperty("AddressPrefixes")]
-        public string AddressPrefixes { get; set; }
-
-        [JsonProperty("IsFlowEnabled")]
-        public bool IsFlowEnabled { get; set; }
-    }
-
-    public class VirtualSubnetwork: ResourceVertex
-    {
-        public string AddressPrefix { get; set; }
-    }
-
     public class GraphEdge
     {
         public string label { get; set; }

@@ -18,14 +18,10 @@ namespace GremlinArnIngestion
         {
             ARMResource armResource = resource.ArmResourceData;
             var vertexType = GraphUtils.GetVertexLabel(armResource.Type);
-            //vertex.pk = vertexType;
-            CheckPropertyChanged("pk", vertex.pk, vertexType);
-            CheckPropertyChanged("DiscoveryRegion", vertex.DiscoveryRegion, armResource.Location);
-            //vertex.DiscoveryRegion = armResource.Location;
-            CheckPropertyChanged("Region", vertex.Region, armResource.Location);
-            //vertex.Region = armResource.Location;
-            CheckPropertyChanged("Subscription", vertex.Subscription, resource.ResourceId.Split("/")[2]);
-            //vertex.Subscription = resource.ResourceId.Split("/")[2];
+            CheckPropertyChanged("pk", vertex?.pk, vertexType);
+            CheckPropertyChanged("DiscoveryRegion", vertex?.DiscoveryRegion, armResource.Location);
+            CheckPropertyChanged("Region", vertex?.Region, armResource.Location);
+            CheckPropertyChanged("Subscription", vertex?.Subscription, resource.ResourceId.Split("/")[2]);
 
             var propertiesJson = JsonConvert.SerializeObject(armResource.Properties);
             var propertiesNode = JsonNode.Parse(propertiesJson);
@@ -34,18 +30,44 @@ namespace GremlinArnIngestion
 
             if (vertexType == "VirtualNetwork")
             {
-                var addressPrefixes = (string)propertiesNode!["addressSpace"]!["addressPrefixes"]!.ToString();
-                Console.WriteLine($"Address prefix: {vertex.AddressPrefixes}");
-                CheckPropertyChanged("AddressPrefixes", vertex.AddressPrefixes, addressPrefixes);
+                var addressPrefixes = propertiesNode!["addressSpace"]!["addressPrefixes"]!.ToJsonString();
+                CheckPropertyChanged("AddressPrefixes", vertex?.AddressPrefixes, addressPrefixes);
+
+                // TODO: Not sure how to infer IsFlowEnabled based on ARN event
+                var enabledFlowLogCategories = propertiesNode!["flowLogConfiguration"]!["enabledFlowLogCategories"]!;
+                bool isFlowEnabled = (enabledFlowLogCategories != null);
+                CheckPropertyChanged("IsFlowEnabled", vertex?.IsFlowEnabled, isFlowEnabled);
             }
             else if (vertexType == "VirtualSubnetwork")
             {
-                //var addressPrefix = propertiesNode![""]
+                var addressPrefix = (string)propertiesNode!["addressPrefix"]!;
+                CheckPropertyChanged("AddressPrefix", vertex?.AddressPrefix, addressPrefix);
+            }
+            else if (vertexType == "NetworkSecurityGroup")
+            {
+                var resourceGuid = (string)propertiesNode!["resourceGuid"]!;
+                CheckPropertyChanged("ResourceGuid", vertex?.ResourceGuid, resourceGuid);
             }
             else if (vertexType == "VirtualMachine")
             {
-                int zones = (int)resource.ArmResource["zones"];
-                CheckPropertyChanged("Zones", vertex.Zones, zones);
+                int zones = (int)resource.ArmResource["zones"]!;
+                CheckPropertyChanged("Zones", vertex?.Zones, zones);
+            }
+            else if (vertexType == "StorageAccount")
+            {
+                string publicNetworkAccess = (string)propertiesNode!["publicNetworkAccess"]!;
+                CheckPropertyChanged("publicNetworkAccess", vertex?.PublicNetworkAccess, publicNetworkAccess);
+            }
+            else if (vertexType == "NetworkInterface")
+            {
+                string MACAddress = (string)propertiesNode!["MACAddress"]!;
+                CheckPropertyChanged("MACAddress", vertex?.MACAddress, MACAddress);
+
+                string PrivateIPAddresses = (string)propertiesNode!["PrivateIPAddresses"]!.ToJsonString();
+                CheckPropertyChanged("PrivateIPAddresses", vertex?.PrivateIPAddresses, PrivateIPAddresses);
+
+                string PublicIPAddresses = (string)propertiesNode!["PublicIPAddresses"]!.ToJsonString();
+                CheckPropertyChanged("PublicIPAddresses", vertex?.PublicIPAddresses, PublicIPAddresses);
             }
 
             // Check edge changes
@@ -68,7 +90,10 @@ namespace GremlinArnIngestion
                     var flowLogId = (string)flowLog!["id"]!;
                     flowLogIds.Add(flowLogId);
                 }
-                CheckEdgesChanged(EdgeLabel.flowlog.ToString(), vertex, flowLogIds, true);
+                CheckEdgesChanged(EdgeLabel.flows.ToString(), vertex, flowLogIds, true);
+
+                var nsgId = (string)propertiesNode!["networkSecurityGroup"]?["id"]!;
+                CheckEdgeChanged(EdgeLabel.nsg.ToString(), vertex, nsgId, false);
             }
             else if (vertexType == "VirtualSubnetwork")
             {
@@ -90,7 +115,20 @@ namespace GremlinArnIngestion
             if (vertexValueString != arnValueString)
             {
                 Console.WriteLine($"Detected change in property {propertyName}. vertexValue: {vertexValue} , arnValue: {arnValue}");
-                diffEvent.Properties.Add(new PropertyDiff(propertyName, OperationType.Update.ToString(), vertexValueString, arnValueString));
+                if (arnValueString == "null")
+                {
+                    // Property was deleted.
+                    diffEvent.Properties.Add(new PropertyDiff(propertyName, OperationType.Delete.ToString(), vertexValueString, arnValueString));
+                }
+                else if (vertexValueString == "null")
+                {
+                    // Property was added.
+                    diffEvent.Properties.Add(new PropertyDiff(propertyName, OperationType.Add.ToString(), vertexValueString, arnValueString));
+                }
+                else
+                {
+                    diffEvent.Properties.Add(new PropertyDiff(propertyName, OperationType.Update.ToString(), vertexValueString, arnValueString));
+                }
 
                 return true;
             }
@@ -106,7 +144,12 @@ namespace GremlinArnIngestion
         {
             var edgeDiffResources = new List<EdgeDiffResource>();
 
-            Dictionary<string, GraphEdge> graphEdges = outbound ? vertex.OutboundEdges : vertex.InboundEdges;
+            // Filter out null values
+            arnEdgeVertexIds.RemoveAll(item => item == null);
+
+            Dictionary<string, GraphEdge> graphEdges = (vertex == null) 
+                                                    ? (new Dictionary<string, GraphEdge>()) 
+                                                    : outbound ? vertex?.OutboundEdges : vertex?.InboundEdges;
             string directionString = outbound ? "to" : "from";
 
             foreach (var vertexId in arnEdgeVertexIds)

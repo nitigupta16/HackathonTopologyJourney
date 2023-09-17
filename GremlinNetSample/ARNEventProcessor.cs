@@ -29,33 +29,36 @@ namespace GremlinArnIngestion
             // TODO: If resource count can be greater than 1, we need to process all resources and return a list of DiffEvents
 
             var modifiedResource = resources[0];
+
+            if (arnEvent.EventType.EndsWith("/delete"))
+            {
+                // Handle deletion separately.
+                DiffEvent deletionDiffEvent = new DiffEvent();
+                deletionDiffEvent.Id = modifiedResource.ResourceId;
+                deletionDiffEvent.Timestamp = arnEvent.EventTime;
+                var eventTypeSegments = arnEvent.EventType.Split("/");
+                var resourceType = eventTypeSegments[eventTypeSegments.Count() - 2];
+                deletionDiffEvent.Type = GraphUtils.GetVertexLabel(resourceType);
+                deletionDiffEvent.Operation = "Delete";
+
+                Console.WriteLine($"Diff event: \n{JsonConvert.SerializeObject(deletionDiffEvent)}");
+                return deletionDiffEvent;
+            }
+
             ARMResource modifiedArmResource = JObject.FromObject(modifiedResource.ArmResource).ToObject<ARMResource>();
             string vertexType = GraphUtils.GetVertexLabel(modifiedArmResource.Type);
             Console.WriteLine($"Vertex type: {vertexType}");
 
-            // Convert ARNEvent resource into data model matching that in graph
-            ARNUtils.GetResourceData(modifiedResource);
-
             // Fetch vertex details from Gremlin
             var vertexDetails = GraphUtils.GetVertexDetails(gremlinClient, (string)resources[0].ArmResource["id"]);
-            if (vertexDetails == null)
-            {
-                // Resource was created. Change eventType accordingly.
-            }
-            else
-            {
-                Console.WriteLine($"Vertex: {vertexDetails}");
-            }
+            Console.WriteLine($"Vertex: {vertexDetails}");
 
-            // Compare against ARN event
+            // Compare vertex against resource from ARN event
+            // Form diff according to format
+
             var diffUtils = new DiffUtils();
             DiffEvent diffEvent = diffUtils.CompareResourceWithVertex(modifiedResource, vertexDetails);
 
-            Console.WriteLine($"Diff event: \n{JsonConvert.SerializeObject(diffEvent)}");
-
-            // Form change according to format
-
-            //var addQuery = FormGremlinAddQuery(resources[0]);
             diffEvent.Id = modifiedResource.ResourceId;
             diffEvent.Timestamp = arnEvent.EventTime;
             diffEvent.Type = vertexType;
@@ -67,6 +70,7 @@ namespace GremlinArnIngestion
             {
                 diffEvent.Operation = (vertexDetails == null) ? "Add" : "Update";
             }
+            Console.WriteLine($"Diff event: \n{JsonConvert.SerializeObject(diffEvent)}");
 
             return diffEvent;
         }

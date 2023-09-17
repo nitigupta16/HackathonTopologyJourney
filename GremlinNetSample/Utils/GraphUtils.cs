@@ -85,23 +85,23 @@ namespace GremlinArnIngestion
         {
             if (resourceType.EndsWith("virtualNetworks"))
             {
-                return "VirtualNetwork";
+                return ResourceType.VirtualNetwork.ToString();
             }
             else if (resourceType.EndsWith("virtualMachines"))
             {
-                return "VirtualMachine";
+                return ResourceType.VirtualMachine.ToString();
             }
             else if (resourceType.EndsWith("subnets"))
             {
-                return "VirtualSubnetwork";
+                return ResourceType.VirtualSubnetwork.ToString();
             }
             else if (resourceType.EndsWith("networkInterfaces"))
             {
-                return "NetworkInterface";
+                return ResourceType.NetworkInterface.ToString();
             }
             else if (resourceType.EndsWith("storageAccounts"))
             {
-                return "StorageAccounts";
+                return ResourceType.StorageAccount.ToString();
             }
             // TODO: Add for all resource types
             return "Unknown";
