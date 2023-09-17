@@ -13,7 +13,7 @@
                     "statusCode": "OK",
                     "armResource": {
                         "name": "hack-test-vm-1395_z1",
-                        "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkInterfaces/hack-test-vm-1395_z1",
+                        "id": "hack-test-vm-1395_z1",
                         "etag": "W/\"ce1fcc07-2b91-4917-940f-6e919532f59d\"",
                         "properties": {
                             "provisioningState": "Succeeded",
@@ -52,11 +52,11 @@
                             "vnetEncryptionSupported": false,
                             "enableIPForwarding": false,
                             "networkSecurityGroup": {
-                                "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-vm-1-nsg"
+                                "id": "hack-test-vm-1-nsg"
                             },
                             "primary": true,
                             "virtualMachine": {
-                                "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Compute/virtualMachines/hack-test-vm-1"
+                                "id": "hack-test-vm-1"
                             },
                             "hostedWorkloads": [],
                             "tapConfigurations": [],

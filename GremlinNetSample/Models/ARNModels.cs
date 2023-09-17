@@ -72,4 +72,5 @@ public enum ResourceType
     VirtualMachine,
     NetworkInterface,
     StorageAccount,
+    NetworkSecurityGroup,
 }

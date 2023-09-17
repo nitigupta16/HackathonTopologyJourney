@@ -1,0 +1,407 @@
+[
+    {
+        "id": "9b08593c-79d2-4f43-a8ff-ce359f2301b4",
+        "subject": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1",
+        "data": {
+            "resourceLocation": "eastus2",
+            "publisherInfo": "Microsoft.Resources",
+            "resources": [
+                {
+                    "correlationId": "fd3946e1-e59d-4322-8b85-f652477299e0",
+                    "resourceId": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1",
+                    "apiVersion": "2017-10-01",
+                    "statusCode": "OK",
+                    "armResource": {
+                        "name": "hack-test-nsg-1",
+                        "id": "hack-test-nsg-1",
+                        "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                        "type": "Microsoft.Network/networkSecurityGroups",
+                        "location": "eastus2",
+                        "tags": {},
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "resourceGuid": "25d19e30-58bb-437a-ab45-859d33509259",
+                            "securityRules": [
+                                {
+                                    "name": "NRMS-Rule-103",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-103",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Created by Azure Core Security managed policy, rule can be deleted but do not change source ips, please see aka.ms/cainsgpolicy",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "*",
+                                        "sourceAddressPrefix": "CorpNetPublic",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Allow",
+                                        "priority": 103,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "NRMS-Rule-107",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-107",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "DO NOT DELETE - Will result in ICM Sev 2 - Azure Core Security, see aka.ms/cainsgpolicy",
+                                        "protocol": "Tcp",
+                                        "sourcePortRange": "*",
+                                        "sourceAddressPrefix": "Internet",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Deny",
+                                        "priority": 107,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [
+                                            "23",
+                                            "135",
+                                            "445",
+                                            "5985",
+                                            "5986"
+                                        ],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "NRMS-Rule-109",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-109",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "DO NOT DELETE - Will result in ICM Sev 2 - Azure Core Security, see aka.ms/cainsgpolicy",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "sourceAddressPrefix": "Internet",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Deny",
+                                        "priority": 109,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [
+                                            "119",
+                                            "137",
+                                            "138",
+                                            "139",
+                                            "161",
+                                            "162",
+                                            "389",
+                                            "636",
+                                            "2049",
+                                            "2301",
+                                            "2381",
+                                            "3268",
+                                            "5800",
+                                            "5900"
+                                        ],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "NRMS-Rule-106",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-106",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "DO NOT DELETE - Will result in ICM Sev 2 - Azure Core Security, see aka.ms/cainsgpolicy",
+                                        "protocol": "Tcp",
+                                        "sourcePortRange": "*",
+                                        "sourceAddressPrefix": "Internet",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Deny",
+                                        "priority": 106,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [
+                                            "22",
+                                            "3389"
+                                        ],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "NRMS-Rule-104",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-104",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Created by Azure Core Security managed policy, rule can be deleted but do not change source ips, please see aka.ms/cainsgpolicy",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "*",
+                                        "sourceAddressPrefix": "CorpNetSaw",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Allow",
+                                        "priority": 104,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "NRMS-Rule-105",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-105",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "DO NOT DELETE - Will result in ICM Sev 2 - Azure Core Security, see aka.ms/cainsgpolicy",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "sourceAddressPrefix": "Internet",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Deny",
+                                        "priority": 105,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [
+                                            "1433",
+                                            "1434",
+                                            "3306",
+                                            "4333",
+                                            "5432",
+                                            "6379",
+                                            "7000",
+                                            "7001",
+                                            "7199",
+                                            "9042",
+                                            "9160",
+                                            "9300",
+                                            "16379",
+                                            "26379",
+                                            "27017"
+                                        ],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "NRMS-Rule-101",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-101",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Created by Azure Core Security managed policy, placeholder you can delete, please see aka.ms/cainsgpolicy",
+                                        "protocol": "Tcp",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "443",
+                                        "sourceAddressPrefix": "VirtualNetwork",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Allow",
+                                        "priority": 101,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "NRMS-Rule-108",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-108",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "DO NOT DELETE - Will result in ICM Sev 2 - Azure Core Security, see aka.ms/cainsgpolicy",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "sourceAddressPrefix": "Internet",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Deny",
+                                        "priority": 108,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [
+                                            "13",
+                                            "17",
+                                            "19",
+                                            "53",
+                                            "69",
+                                            "111",
+                                            "123",
+                                            "512",
+                                            "514",
+                                            "593",
+                                            "873",
+                                            "1900",
+                                            "5353",
+                                            "11211"
+                                        ],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                }
+                            ],
+                            "defaultSecurityRules": [
+                                {
+                                    "name": "AllowVnetInBound",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowVnetInBound",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Allow inbound traffic from all VMs in VNET",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "*",
+                                        "sourceAddressPrefix": "VirtualNetwork",
+                                        "destinationAddressPrefix": "VirtualNetwork",
+                                        "access": "Allow",
+                                        "priority": 65000,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "AllowAzureLoadBalancerInBound",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Allow inbound traffic from azure load balancer",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "*",
+                                        "sourceAddressPrefix": "AzureLoadBalancer",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Allow",
+                                        "priority": 65001,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "DenyAllInBound",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/DenyAllInBound",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Deny all inbound traffic",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "*",
+                                        "sourceAddressPrefix": "*",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Deny",
+                                        "priority": 65500,
+                                        "direction": "Inbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "AllowVnetOutBound",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowVnetOutBound",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "*",
+                                        "sourceAddressPrefix": "VirtualNetwork",
+                                        "destinationAddressPrefix": "VirtualNetwork",
+                                        "access": "Allow",
+                                        "priority": 65000,
+                                        "direction": "Outbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "AllowInternetOutBound",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowInternetOutBound",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Allow outbound traffic from all VMs to Internet",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "*",
+                                        "sourceAddressPrefix": "*",
+                                        "destinationAddressPrefix": "Internet",
+                                        "access": "Allow",
+                                        "priority": 65001,
+                                        "direction": "Outbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                },
+                                {
+                                    "name": "DenyAllOutBound",
+                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/DenyAllOutBound",
+                                    "etag": "W/\"f1538a5c-f073-4094-a1ce-967e20efeac2\"",
+                                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                                    "properties": {
+                                        "provisioningState": "Succeeded",
+                                        "description": "Deny all outbound traffic",
+                                        "protocol": "*",
+                                        "sourcePortRange": "*",
+                                        "destinationPortRange": "*",
+                                        "sourceAddressPrefix": "*",
+                                        "destinationAddressPrefix": "*",
+                                        "access": "Deny",
+                                        "priority": 65500,
+                                        "direction": "Outbound",
+                                        "sourcePortRanges": [],
+                                        "destinationPortRanges": [],
+                                        "sourceAddressPrefixes": [],
+                                        "destinationAddressPrefixes": []
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "additionalResourceProperties": {
+                        "armLinkedNotificationSource": "ResourceConsistencyJob",
+                        "sourceOperation": "Create",
+                        "provisioningState": "Succeeded"
+                    }
+                }
+            ],
+            "frontdoorLocation": "eastus2",
+            "resourcesContainer": "Inline",
+            "homeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "resourceHomeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "routingType": "Default"
+        },
+        "eventType": "Microsoft.Network/networkSecurityGroups/write",
+        "dataVersion": "3.0",
+        "metadataVersion": "1",
+        "eventTime": "2023-09-13T10:34:00.0052095Z",
+        "topic": "/subscriptions/1b433ca3-b636-417e-adac-a471c030b39f/resourceGroups/GovernanceNotificationsWusStorage/providers/Microsoft.EventGrid/domains/gov-ntdisp-wus-egdomain2arm/topics/microsoftnetwork-arn-8bfb556e-4fb5-3853-c103-0a2c2870b451"
+    }
+]

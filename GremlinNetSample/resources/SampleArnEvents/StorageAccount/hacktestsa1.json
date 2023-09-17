@@ -17,7 +17,7 @@
                             "tier": "Standard"
                         },
                         "kind": "StorageV2",
-                        "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Storage/storageAccounts/hacktestsa1",
+                        "id": "hacktestsa1",
                         "name": "hacktestsa1",
                         "type": "Microsoft.Storage/storageAccounts",
                         "location": "eastus2",
