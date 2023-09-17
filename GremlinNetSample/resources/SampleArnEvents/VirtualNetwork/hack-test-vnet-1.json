@@ -13,7 +13,7 @@
                     "statusCode": "OK",
                     "armResource": {
                         "name": "hack-test-vnet-1",
-                        "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/virtualNetworks/hack-test-vnet-1",
+                        "id": "hack-test-vnet-1",
                         "etag": "W/\"31acac75-9c61-4ca0-b7e2-e8837e57a73d\"",
                         "type": "Microsoft.Network/virtualNetworks",
                         "location": "eastus2",
@@ -29,13 +29,13 @@
                             "subnets": [
                                 {
                                     "name": "default",
-                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/virtualNetworks/hack-test-vnet-1/subnets/default",
+                                    "id": "hack-test-vnet-1-default",
                                     "etag": "W/\"31acac75-9c61-4ca0-b7e2-e8837e57a73d\"",
                                     "properties": {
                                         "provisioningState": "Succeeded",
                                         "addressPrefix": "10.242.121.0/25",
                                         "networkSecurityGroup": {
-                                            "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-3"
+                                            "id": "hack-test-nsg-3"
                                         },
                                         "ipConfigurations": [
                                             {
@@ -48,7 +48,7 @@
                             ],
                             "flowLogs": [
                                 {
-                                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/srisa-test-rg/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus2_trial/flowLogs/hack-test-vnet-1-hack-test-rg-flowlog"
+                                    "id": "hack-test-vnet-1-hack-test-rg-flowlog"
                                 }
                             ],
                             "flowLogConfiguration": {
