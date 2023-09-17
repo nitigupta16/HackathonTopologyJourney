@@ -1,0 +1,116 @@
+{
+    "id": "hack-test-nsg-1",
+    "timestamp": "2023-09-13T10:34:00.0052095Z",
+    "type": "NetworkSecurityGroup",
+    "operation": "Update",
+    "properties": [],
+    "edges": [
+        {
+            "label": "rule",
+            "resources": [
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-103",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-103"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-107",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-107"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-109",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-109"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-106",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-106"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-104",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-104"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-105",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-105"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-101",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-101"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-108",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/securityRules/NRMS-Rule-108"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowVnetInBound",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowVnetInBound"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowAzureLoadBalancerInBound"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/DenyAllInBound",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/DenyAllInBound"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowVnetOutBound",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowVnetOutBound"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowInternetOutBound",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/AllowInternetOutBound"
+                },
+                {
+                    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/DenyAllOutBound",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/networkSecurityGroups/hack-test-nsg-1/defaultSecurityRules/DenyAllOutBound"
+                },
+                {
+                    "id": "hack-test-nsg-1-NRMS-Rule-101",
+                    "direction": "from",
+                    "operation": "Delete",
+                    "newValue": "null"
+                },
+                {
+                    "id": "hack-test-nsg-1-NRMS-Rule-103",
+                    "direction": "from",
+                    "operation": "Delete",
+                    "newValue": "null"
+                },
+                {
+                    "id": "hack-test-nsg-1-NRMS-Rule-104",
+                    "direction": "from",
+                    "operation": "Delete",
+                    "newValue": "null"
+                }
+            ]
+        }
+    ]
+}
