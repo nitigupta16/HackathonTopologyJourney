@@ -13,6 +13,12 @@ namespace GremlinArnIngestion
 {
     class ARNEventProcessor
 	{
+        public static string ProcessArnEventToDiffJson(GremlinClient gremlinClient, string arnEventFilePath)
+        {
+            DiffEvent diffEvent = ProcessArnEvent(gremlinClient, arnEventFilePath);
+            return JsonConvert.SerializeObject(diffEvent);
+        }
+
         public static DiffEvent ProcessArnEvent(GremlinClient gremlinClient, string arnEventFilePath) {
             // Read ARN event
             var arnEvent = ReadArnEvent(arnEventFilePath);
