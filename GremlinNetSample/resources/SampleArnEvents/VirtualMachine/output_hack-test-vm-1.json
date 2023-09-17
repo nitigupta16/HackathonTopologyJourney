@@ -1,0 +1,17 @@
+{
+    "id": "hack-test-vm-1",
+    "timestamp": "2023-09-13T10:34:00.0052095Z",
+    "type": "VirtualMachine",
+    "operation": "Update",
+    "properties": [
+        {
+            "name": "Zones",
+            "operation": "Update",
+            "values": {
+                "oldValue": "1",
+                "newValue": "[\"1\"]"
+            }
+        }
+    ],
+    "edges": []
+}

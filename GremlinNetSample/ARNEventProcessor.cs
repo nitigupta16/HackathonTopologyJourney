@@ -65,7 +65,7 @@ namespace GremlinArnIngestion
             var diffUtils = new DiffUtils();
             DiffEvent diffEvent = diffUtils.CompareResourceWithVertex(modifiedResource, vertexDetails);
 
-            diffEvent.Id = modifiedResource.ResourceId;
+            diffEvent.Id = modifiedResource.ArmResourceData.Id;
             diffEvent.Timestamp = arnEvent.EventTime;
             diffEvent.Type = vertexType;
             if (arnEvent.EventType.EndsWith("/delete"))

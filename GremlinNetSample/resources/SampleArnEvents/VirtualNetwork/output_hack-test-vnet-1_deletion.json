@@ -1,0 +1,8 @@
+{
+    "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Network/virtualNetworks/hack-test-vnet-1",
+    "timestamp": "2023-09-13T10:34:00.0052095Z",
+    "type": "VirtualNetwork",
+    "operation": "Delete",
+    "properties": [],
+    "edges": []
+}

@@ -53,7 +53,8 @@ namespace GremlinArnIngestion
             }
             else if (vertexType == ResourceType.VirtualMachine.ToString())
             {
-                int zones = (int)resource.ArmResource["zones"];
+                var zones = resource.ArmResource["zones"];
+                string zonesString = JsonConvert.SerializeObject(zones);
                 CheckPropertyChanged("Zones", vertex?.Zones, zones);
             }
             else if (vertexType == ResourceType.StorageAccount.ToString())

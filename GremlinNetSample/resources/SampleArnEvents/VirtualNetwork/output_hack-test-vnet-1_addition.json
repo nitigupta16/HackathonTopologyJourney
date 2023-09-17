@@ -1,0 +1,80 @@
+{
+    "id": "hack-test-vnet-1-addition",
+    "timestamp": "2023-09-13T10:34:00.0052095Z",
+    "type": "VirtualNetwork",
+    "operation": "Add",
+    "properties": [
+        {
+            "name": "pk",
+            "operation": "Add",
+            "values": {
+                "oldValue": "null",
+                "newValue": "\"VirtualNetwork\""
+            }
+        },
+        {
+            "name": "DiscoveryRegion",
+            "operation": "Add",
+            "values": {
+                "oldValue": "null",
+                "newValue": "\"eastus2\""
+            }
+        },
+        {
+            "name": "Region",
+            "operation": "Add",
+            "values": {
+                "oldValue": "null",
+                "newValue": "\"eastus2\""
+            }
+        },
+        {
+            "name": "Subscription",
+            "operation": "Add",
+            "values": {
+                "oldValue": "null",
+                "newValue": "\"a38f78b2-f840-4628-90f8-009ec9745a16\""
+            }
+        },
+        {
+            "name": "AddressPrefixes",
+            "operation": "Add",
+            "values": {
+                "oldValue": "null",
+                "newValue": "\"[\\\"10.242.121.0/24\\\"]\""
+            }
+        },
+        {
+            "name": "IsFlowEnabled",
+            "operation": "Add",
+            "values": {
+                "oldValue": "null",
+                "newValue": "true"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "label": "subnet",
+            "resources": [
+                {
+                    "id": "hack-test-vnet-1-addition-default",
+                    "direction": "from",
+                    "operation": "Add",
+                    "newValue": "hack-test-vnet-1-addition-default"
+                }
+            ]
+        },
+        {
+            "label": "flows",
+            "resources": [
+                {
+                    "id": "hack-test-vnet-1-addition-hack-test-rg-flowlog",
+                    "direction": "to",
+                    "operation": "Add",
+                    "newValue": "hack-test-vnet-1-addition-hack-test-rg-flowlog"
+                }
+            ]
+        }
+    ]
+}

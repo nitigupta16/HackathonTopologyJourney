@@ -1,0 +1,17 @@
+{
+    "id": "hack-test-vnet-1-default",
+    "timestamp": "2023-09-13T10:34:00.0052095Z",
+    "type": "VirtualSubnetwork",
+    "operation": "Update",
+    "properties": [
+        {
+            "name": "AddressPrefix",
+            "operation": "Update",
+            "values": {
+                "oldValue": "\"10.242.121.0-25\"",
+                "newValue": "\"10.242.121.0/25\""
+            }
+        }
+    ],
+    "edges": []
+}
