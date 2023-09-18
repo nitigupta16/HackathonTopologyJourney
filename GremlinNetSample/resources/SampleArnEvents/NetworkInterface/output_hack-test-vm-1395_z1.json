@@ -1,6 +1,6 @@
 {
     "id": "hack-test-vm-1395_z1",
-    "timestamp": "2023-09-13T10:34:00.0052095Z",
+    "timestamp": "2023-09-14T12:50:00.0052095Z",
     "type": "NetworkInterface",
     "operation": "Update",
     "properties": [
@@ -8,8 +8,8 @@
             "name": "PrivateIPAddresses",
             "operation": "Update",
             "values": {
-                "oldValue": "\"10.242.121.4\"",
-                "newValue": "\"[\\\"10.242.121.4\\\"]\""
+                "oldValue": "\"10.242.121.8\"",
+                "newValue": "\"10.242.121.4\""
             }
         }
     ],
