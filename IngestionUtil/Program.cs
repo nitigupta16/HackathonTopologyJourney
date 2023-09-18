@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 
+
 namespace IngestionUtil
 {
     class Program
@@ -11,7 +12,10 @@ namespace IngestionUtil
             ARNChangeData? aRNChangeData =
             JsonSerializer.Deserialize<ARNChangeData>(input);
             LAIngestionData ingestionContent = UploadDataToLA.FormatUploadData(aRNChangeData);
-             UploadDataToLA.IngestDataToLA(new Uri("https://hacktestdce-lcyo.eastus2-1.ingest.monitor.azure.com"), "dcr-49d4b21b4093457ba098ff734bbf6dfd", "Custom-RawDataTopology", ingestionContent);
+            UploadDataToLA.IngestDataToLA(new Uri("https://hacktestdce-lcyo.eastus2-1.ingest.monitor.azure.com"), "dcr-49d4b21b4093457ba098ff734bbf6dfd", "Custom-RawDataTopology", ingestionContent);
+            GremlinIngestionData gremlinIngestionData = UploadDataToGremlin.FormatUploadData(aRNChangeData);
+            UploadDataToGremlin.IngestDataToGremlin(gremlinIngestionData);
+
             // Exit program
             Console.WriteLine("Done. Press any key to exit...");
             Console.ReadLine();

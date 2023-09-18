@@ -3,6 +3,7 @@ using Gremlin.Net.Driver;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GremlinUtils;
 
 namespace IngestionUtil
 {
@@ -117,11 +118,13 @@ namespace IngestionUtil
 			return gremlinIngestionData;
 		}
 
-		public static void IngestDataToGremlin (GremlinIngestionData gremlinIngestionData, GremlinClient gremlinClient)
+		public static void IngestDataToGremlin (GremlinIngestionData gremlinIngestionData)
 		{
-			//query to add/ update/ delete the vertex 
+            gremlinUtils gremlinUtilsInstance = new gremlinUtils();
+            GremlinClient gremlinClient = gremlinUtilsInstance.getGremlinClient();
 
-			KeyValuePair<string, string> vertexQuery = new KeyValuePair<string, string>();
+            //query to add/ update/ delete the vertex 
+            KeyValuePair<string, string> vertexQuery = new KeyValuePair<string, string>();
 
             if (gremlinIngestionData.operation == "Add")
 			{
@@ -136,7 +139,7 @@ namespace IngestionUtil
                 vertexQuery = GremlinIngestionData.queryToUpdateVertex(gremlinIngestionData.resourceId, gremlinIngestionData.properties);
 			}
 
-			var resultSetVertex = SubmitRequest(gremlinClient, vertexQuery).Result;
+			var resultSetVertex = gremlinUtilsInstance.RunGremlinQuery(gremlinClient, vertexQuery);
 			if (resultSetVertex.Count == 0)
 			{
 				Console.WriteLine($"Couldnt perform {gremlinIngestionData.operation} on vertex with id = {gremlinIngestionData.resourceId}"); 
@@ -171,7 +174,7 @@ namespace IngestionUtil
 			}
 			foreach (KeyValuePair<string, string> query in queriesForUpdatingEdges)
 			{
-				var resultSetEdges = SubmitRequest(gremlinClient, query).Result;
+				var resultSetEdges = gremlinUtilsInstance.RunGremlinQuery(gremlinClient, query);
 				if (resultSetEdges.Count == 0)
 				{
 					Console.WriteLine($"Couldnt execute query {query}");
