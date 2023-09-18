@@ -1,11 +1,8 @@
-using Azure;
-using Azure.Core;
-using Azure.Identity;
-using Azure.Monitor.Ingestion;
-using System.ComponentModel;
-using System.Data;
+using System;
+using Gremlin.Net.Driver;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using System.Text.Json;
 
 namespace IngestionUtil
 {
@@ -30,14 +27,14 @@ namespace IngestionUtil
 
 		public static KeyValuePair<string, string> queryToAddVertex(string type, string resourceID, Dictionary<string, string> propertiesToBeAdded)
 		{
-			string vertexLabel = label;
+			string vertexLabel = type;
 			string vertexID = resourceID;
 			Dictionary<string, string> propertiesList = propertiesToBeAdded;
-			StringBuilder queryValue = new StringBuilder($"g.addV('{label}').property('id', '{vertexID}').property('CreatedTime', '{DateTime.Now}').property('LastModifiedTime', '{DateTime.Now}').property('pk', '{label}').property('isDeleted', 'false')");
+			string queryValue = $"g.addV('{vertexLabel}').property('id', '{vertexID}').property('CreatedTime', '{DateTime.Now}').property('LastModifiedTime', '{DateTime.Now}').property('pk', '{vertexLabel}').property('isDeleted', 'false')";
 			string queryKey = "Add Vertex";
 			foreach (var property in propertiesToBeAdded)
 			{
-				queryValue.Append($".property('{property.Key}', '{property.Value}')");
+				queryValue += $".property('{property.Key}', '{property.Value}')";
 			}
 			return new KeyValuePair<string, string>(queryKey, queryValue);
 		}
@@ -46,12 +43,12 @@ namespace IngestionUtil
 		{
 			string vertexId = id;
 			Dictionary<string, string> propertiesList = propertiesToBeUpdated;
-			StringBuilder queryValue = new StringBuilder($"g.V('{vertexId}')property('LastModifiedTime', '{DateTime.Now}')");
+			string queryValue = $"g.V('{vertexId}').property('LastModifiedTime', '{DateTime.Now}')";
 			string queryKey = $"Update Vertex id = {vertexId}";
 
 			foreach (var property in propertiesToBeUpdated)
 			{
-				queryValue.Append($".property('{property.Key}', '{property.Value}')");
+				queryValue += $".property('{property.Key}', '{property.Value}')";
 			}
 
 			return new KeyValuePair<string, string>(queryKey, queryValue);
@@ -60,7 +57,6 @@ namespace IngestionUtil
 		public static KeyValuePair<string, string> queryToDeleteVertex(string id)
 		{
 			string vertexId = id;
-			//StringBuilder queryValue = new StringBuilder($"g.V('{vertexId}')property('LastModifiedTime', '{DateTime.Now}')");
 			string queryKey = $"Delete Vertex id = {vertexId}";
 			string queryValue = $"g.V('{vertexId}')property('LastModifiedTime', '{DateTime.Now}').property('isDeleted', 'false')";
 
@@ -80,22 +76,24 @@ namespace IngestionUtil
 		{
 			string edgeLabel = label;
 			string queryKey = "Add Edge";
-			String queryValue = $"g.V('{currentVertexId}').addE('{edgeLabel}').'{direction}'(g.V('{targetVertex}')";
+			string queryValue = $"g.V('{currentVertexId}').addE('{edgeLabel}').'{direction}'(g.V('{targetVertex}')";
 
 			return new KeyValuePair<string, string>(queryKey, queryValue);
 
 		}
 
-		public static KeyValuePair<string, string> queryToRemoveEdge(string currentVertexID, string label, string direction, string targetVertex)
+		public static KeyValuePair<string, string> queryToRemoveEdge(string currentVertexId, string label, string direction, string targetVertex)
 		{
 			string edgeLabel = label;
 			string queryKey = "Remove Edge";
+			string queryValue;
 			if (direction == "from")
 			{
-				String queryValue = $"g.V('{currentVertexId}').inE('{edgeLabel}').where(outV().is('{targetVertex}')).property('label', 'inactive')";
-			} else
+				queryValue = $"g.V('{currentVertexId}').inE('{edgeLabel}').where(outV().is('{targetVertex}')).property('label', 'inactive')";
+			} 
+			else
 			{
-				String queryValue = $"g.V('{currentVertexId}').outE('{edgeLabel}').where(inV().is('{targetVertex}')).property('label', 'inactive')";
+				queryValue = $"g.V('{currentVertexId}').outE('{edgeLabel}').where(inV().is('{targetVertex}')).property('label', 'inactive')";
 			}
 
 			return new KeyValuePair<string, string>(queryKey, queryValue);
@@ -112,31 +110,34 @@ namespace IngestionUtil
 			Dictionary<string, string> properties = new Dictionary<string, string>();
 			foreach (Properties property in inputData.properties)
 			{
-				propertyNameValue.Add(property.name, property.values.newValue);
+                properties.Add(property.name, property.values.newValue);
 			}
 
-			GremlinIngestionData gremlinIngestionData = new gremlinIngestionData(inputData.resourceId, inputData.timestamp, inputData.resourceType, inputData.operation, properties, inputData.edges);
+			GremlinIngestionData gremlinIngestionData = new GremlinIngestionData(inputData.resourceId, inputData.timestamp, inputData.resourceType, inputData.operation, properties, inputData.edges);
 			return gremlinIngestionData;
 		}
 
 		public static void IngestDataToGremlin (GremlinIngestionData gremlinIngestionData, GremlinClient gremlinClient)
 		{
 			//query to add/ update/ delete the vertex 
-			if (gremlinIngestionData.operation == "Add")
+
+			KeyValuePair<string, string> vertexQuery = new KeyValuePair<string, string>();
+
+            if (gremlinIngestionData.operation == "Add")
 			{
-				KeyValuePair<string, string> query = queryToAddVertex(gremlinIngestionData.resourceType, gremlinIngestionData.resourceId, gremlinIngestionData.properties)
+                vertexQuery = GremlinIngestionData.queryToAddVertex(gremlinIngestionData.resourceType, gremlinIngestionData.resourceId, gremlinIngestionData.properties);
 			}
-			else if (gremlinIngestionData.operation = "Delete")
+			else if (gremlinIngestionData.operation == "Delete")
 			{
-				KeyValuePair<string, string> query = queryToDeleteVertex(gremlinIngestionData.resourceId)
+                vertexQuery = GremlinIngestionData.queryToDeleteVertex(gremlinIngestionData.resourceId);
 			}
-			else if (gremlinIngestionData.operation = "Update")
+			else if (gremlinIngestionData.operation == "Update")
 			{
-				KeyValuePair<string, string> query  = queryToUpdateVertex(gremlinIngestionData.resourceId, gremlinIngestionData.properties)
+                vertexQuery = GremlinIngestionData.queryToUpdateVertex(gremlinIngestionData.resourceId, gremlinIngestionData.properties);
 			}
 
-			var resultSet = SubmitRequest(gremlinClient, query).Result;
-			if (resultSet.Count == 0)
+			var resultSetVertex = SubmitRequest(gremlinClient, vertexQuery).Result;
+			if (resultSetVertex.Count == 0)
 			{
 				Console.WriteLine($"Couldnt perform {gremlinIngestionData.operation} on vertex with id = {gremlinIngestionData.resourceId}"); 
 			}
@@ -144,10 +145,10 @@ namespace IngestionUtil
 			//queries to add/ delete the nodes 
 			Dictionary<string, string> queriesForUpdatingEdges = new Dictionary<string, string>();
 
-			if (gremlinIngestionData.operation = "Delete")
+			if (gremlinIngestionData.operation == "Delete")
 			{
-				KeyValuePair<string, string> query = queryToRemoveAllEdgesOfAVertex(string gremlinIngestionData.resourceId);
-				queriesForUpdatingEdges.Add(query);
+				KeyValuePair<string, string> query = GremlinIngestionData.queryToRemoveAllEdgesOfAVertex(gremlinIngestionData.resourceId);
+				queriesForUpdatingEdges.Add(query.Key, query.Value);
 			}
 			else
 			{
@@ -157,23 +158,23 @@ namespace IngestionUtil
 					{
 						if (resource.resourceOperation == "Delete")
 						{
-							KeyValuePair<string, string> query = queryToRemoveEdge(gremlinIngestionData.resourceId, gremlinIngestionData.resourceType, resource.direction, resource.oldResourceId)
-							queriesForUpdatingEdges.Add(query);
-						} 
+							KeyValuePair<string, string> query = GremlinIngestionData.queryToRemoveEdge(gremlinIngestionData.resourceId, gremlinIngestionData.resourceType, resource.direction, resource.oldResourceId);
+                            queriesForUpdatingEdges.Add(query.Key, query.Value);
+                        } 
 						else if (resource.resourceOperation == "Add")
 						{
-							KeyValuePair<string, string> query = queryToAddEdge(gremlinIngestionData.resourceId, gremlinIngestionData.resourceType, resource.direction, resource.oldResourceId)
-							queriesForUpdatingEdges.Add(query);
-						}
+							KeyValuePair<string, string> query = GremlinIngestionData.queryToAddEdge(gremlinIngestionData.resourceId, gremlinIngestionData.resourceType, resource.direction, resource.oldResourceId);
+                            queriesForUpdatingEdges.Add(query.Key, query.Value);
+                        }
 					}
 				}
 			}
 			foreach (KeyValuePair<string, string> query in queriesForUpdatingEdges)
 			{
-				var resultSet = SubmitRequest(gremlinClient, query).Result;
-				if (resultSet.Count == 0)
+				var resultSetEdges = SubmitRequest(gremlinClient, query).Result;
+				if (resultSetEdges.Count == 0)
 				{
-					Console.WriteLine($"Couldnt perform query {query}");
+					Console.WriteLine($"Couldnt execute query {query}");
 				}
 			}
 		}
