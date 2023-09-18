@@ -55,7 +55,7 @@ namespace GremlinArnIngestion
             {
                 var zones = resource.ArmResource["zones"];
                 string zonesString = JsonConvert.SerializeObject(zones);
-                CheckPropertyChanged("Zones", vertex?.Zones, zones);
+                CheckPropertyChanged("Zones", vertex?.Zones, zonesString);
             }
             else if (vertexType == ResourceType.StorageAccount.ToString())
             {
