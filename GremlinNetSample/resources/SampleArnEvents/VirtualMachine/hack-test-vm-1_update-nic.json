@@ -1,0 +1,167 @@
+[
+    {
+        "id": "9b08593c-79d2-4f43-a8ff-ce359f2301b4",
+        "subject": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Compute/virtualMachines/hack-test-vm-1",
+        "data": {
+            "resourceLocation": "eastus2",
+            "publisherInfo": "Microsoft.Resources",
+            "resources": [
+                {
+                    "correlationId": "fd3946e1-e59d-4322-8b85-f652477299e0",
+                    "resourceId": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Compute/virtualMachines/hack-test-vm-1",
+                    "apiVersion": "2021-03-01",
+                    "statusCode": "OK",
+                    "armResource": {
+                        "name": "hack-test-vm-1",
+                        "id": "hack-test-vm-1",
+                        "type": "Microsoft.Compute/virtualMachines",
+                        "location": "eastus2",
+                        "tags": {
+                            "azsecpack": "nonprod",
+                            "platformsettings.host_environment.service.platform_optedin_for_rootcerts": "true"
+                        },
+                        "identity": {
+                            "type": "UserAssigned",
+                            "userAssignedIdentities": {
+                                "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/AzSecPackAutoConfigRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/AzSecPackAutoConfigUA-eastus2": {
+                                    "principalId": "8ede03ea-ac89-49f0-941d-86bcf0a14bb3",
+                                    "clientId": "415bd781-fd35-43b2-aafb-83c2fbeeea15"
+                                }
+                            }
+                        },
+                        "properties": {
+                            "vmId": "16a65af5-6461-46d9-aed3-434911782a76",
+                            "hardwareProfile": {
+                                "vmSize": "Standard_DS2_v2"
+                            },
+                            "storageProfile": {
+                                "imageReference": {
+                                    "publisher": "canonical",
+                                    "offer": "0001-com-ubuntu-server-focal",
+                                    "sku": "20_04-lts-gen2",
+                                    "version": "latest",
+                                    "exactVersion": "20.04.202308310"
+                                },
+                                "osDisk": {
+                                    "osType": "Linux",
+                                    "name": "hack-test-vm-1_OsDisk_1_0fc8fd670de643ef852a93fa5f4d3af2",
+                                    "createOption": "FromImage",
+                                    "caching": "ReadWrite",
+                                    "managedDisk": {
+                                        "storageAccountType": "Premium_LRS",
+                                        "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Compute/disks/hack-test-vm-1_OsDisk_1_0fc8fd670de643ef852a93fa5f4d3af2"
+                                    },
+                                    "deleteOption": "Delete",
+                                    "diskSizeGB": 30
+                                },
+                                "dataDisks": []
+                            },
+                            "osProfile": {
+                                "computerName": "hack-test-vm-1",
+                                "adminUsername": "azureuser",
+                                "linuxConfiguration": {
+                                    "disablePasswordAuthentication": true,
+                                    "ssh": {
+                                        "publicKeys": [
+                                            {
+                                                "path": "/home/azureuser/.ssh/authorized_keys",
+                                                "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqzfixMd5Bfz/7hXphXTwOAFCcksD05gvq0sC279bEumLdtz01E35x+xavyp2ddjQ3GQITwMP7CDnhnc96FuyYy5H66KQWNMf3oWYR9CF5Whi7o4CZE8jUos80hJCkAMZHgfu7LAY58qleSyFB7XcdntSXNG/hGvXZ6mlwLASOfcKMcfVh2zgEqwSmCkASUtKCWtavzH79/rV1J54jkAUnxhbTJEVmrsi5+dripGx0+CbtkxtWBHHHcvftSyGHCX9Qxl1VsN60pFl6IdWEwy7nMxNFeiq5ZLFESGwORKqC1RPMbsUWLhdQpQ6k2TdLkhKfkOJycyLRN2baf5igf6wU68aAUYy9NlTrFXWVpJ8kEh+BG3LjieEJsa7d9VDiHeYllygY4/Qp9s8KgGKtVsL0Q+S0+HWPGHXuFn6HQNrK8lnt+lZQLalFxuL46dNQP4hGCzh9zm3vqFb8PhDviPws5qyPXFm/cUj/ofUsz+JO8mIxk/3VKHB8rh/M9wEiAxU= generated-by-azure"
+                                            }
+                                        ]
+                                    },
+                                    "provisionVMAgent": true,
+                                    "patchSettings": {
+                                        "patchMode": "AutomaticByPlatform",
+                                        "assessmentMode": "ImageDefault"
+                                    }
+                                },
+                                "secrets": [],
+                                "allowExtensionOperations": true,
+                                "requireGuestProvisionSignal": true
+                            },
+                            "securityProfile": {
+                                "uefiSettings": {
+                                    "secureBootEnabled": true,
+                                    "vTpmEnabled": true
+                                },
+                                "securityType": "TrustedLaunch"
+                            },
+                            "networkProfile": {
+                                "networkInterfaces": [
+                                    {
+                                        "id": "hack-test-vm-4238_z1",
+                                        "properties": {
+                                            "deleteOption": "Detach"
+                                        }
+                                    }
+                                ]
+                            },
+                            "diagnosticsProfile": {
+                                "bootDiagnostics": {
+                                    "enabled": true
+                                }
+                            },
+                            "provisioningState": "Succeeded"
+                        },
+                        "zones": [
+                            "1"
+                        ],
+                        "resources": [
+                            {
+                                "name": "Microsoft.Azure.Monitor.AzureMonitorLinuxAgent",
+                                "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Compute/virtualMachines/hack-test-vm-1/extensions/Microsoft.Azure.Monitor.AzureMonitorLinuxAgent",
+                                "type": "Microsoft.Compute/virtualMachines/extensions",
+                                "location": "eastus2",
+                                "properties": {
+                                    "autoUpgradeMinorVersion": true,
+                                    "provisioningState": "Succeeded",
+                                    "enableAutomaticUpgrade": true,
+                                    "publisher": "Microsoft.Azure.Monitor",
+                                    "type": "AzureMonitorLinuxAgent",
+                                    "typeHandlerVersion": "1.0",
+                                    "settings": {
+                                        "GCS_AUTO_CONFIG": true
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Microsoft.Azure.Security.Monitoring.AzureSecurityLinuxAgent",
+                                "id": "/subscriptions/a38f78b2-f840-4628-90f8-009ec9745a16/resourceGroups/hack-test-rg/providers/Microsoft.Compute/virtualMachines/hack-test-vm-1/extensions/Microsoft.Azure.Security.Monitoring.AzureSecurityLinuxAgent",
+                                "type": "Microsoft.Compute/virtualMachines/extensions",
+                                "location": "eastus2",
+                                "properties": {
+                                    "autoUpgradeMinorVersion": true,
+                                    "provisioningState": "Succeeded",
+                                    "enableAutomaticUpgrade": true,
+                                    "publisher": "Microsoft.Azure.Security.Monitoring",
+                                    "type": "AzureSecurityLinuxAgent",
+                                    "typeHandlerVersion": "2.0",
+                                    "settings": {
+                                        "enableGenevaUpload": true,
+                                        "enableAutoConfig": true,
+                                        "reportSuccessOnUnsupportedDistro": true
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "additionalResourceProperties": {
+                        "armLinkedNotificationSource": "ResourceConsistencyJob",
+                        "sourceOperation": "Create",
+                        "provisioningState": "Succeeded"
+                    }
+                }
+            ],
+            "frontdoorLocation": "eastus2",
+            "resourcesContainer": "Inline",
+            "homeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "resourceHomeTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "routingType": "Default"
+        },
+        "eventType": "Microsoft.Compute/virtualMachines/write",
+        "dataVersion": "3.0",
+        "metadataVersion": "1",
+        "eventTime": "2023-09-13T10:34:00.0052095Z",
+        "topic": "/subscriptions/1b433ca3-b636-417e-adac-a471c030b39f/resourceGroups/GovernanceNotificationsWusStorage/providers/Microsoft.EventGrid/domains/gov-ntdisp-wus-egdomain2arm/topics/microsoftnetwork-arn-8bfb556e-4fb5-3853-c103-0a2c2870b451"
+    }
+]
