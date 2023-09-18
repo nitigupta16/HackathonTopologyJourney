@@ -56,7 +56,7 @@ namespace GremlinArnIngestion
 
         // VirtualMachine
 
-        public int? Zones { get; set; }
+        public string? Zones { get; set; }
 
         // NetworkInterface
 
